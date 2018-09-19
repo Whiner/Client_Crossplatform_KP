@@ -1,5 +1,7 @@
 package com.donntu.kp.client;
 
+import com.donntu.kp.client.logger.Log;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -20,10 +22,16 @@ public class DatagramSender {
             InetAddress address = InetAddress.getByName(host);
             DatagramPacket pack = new DatagramPacket(data, data.length, address, port);
             DatagramSocket ds = new DatagramSocket();
+            try {
+                ds.connect(address, port);
+            } catch (Error e) {
+                Log.getInstance().log("Ошибка соединения с сервером. " + e.getMessage());
+            }
             ds.send(pack);
+            Log.getInstance().log("Пакет отправлен по адресу " + address.toString());
             ds.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.getInstance().log("Ошибка отправки пакета по адресу " + host + "/" + port);
         }
     }
 

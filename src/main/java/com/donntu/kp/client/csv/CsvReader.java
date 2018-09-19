@@ -12,6 +12,8 @@ import java.util.List;
 public class CsvReader extends Thread {
     private List<String> parsedLines = new ArrayList<>();
     private String filename;
+    private int birdAttrCount = 11;
+    private int mammalAttrCount = 10;
 
     private void readCreations() {
         if (filename == null || !filename.toLowerCase().contains(".csv")) {
@@ -36,10 +38,9 @@ public class CsvReader extends Thread {
     private void createCreations(List<String> lines) {
         for (String line : lines) {
             String[] split = line.split(";");
-            if (split.length != 11 && split.length != 10) {
+            if (split.length != birdAttrCount && split.length != mammalAttrCount) {
                 Log.getInstance().log("Ошибка на строке: " + line);
             } else {
-                Log.getInstance().log("Получен объект типа Bird");
                 parsedLines.add(line);
             }
 
@@ -65,6 +66,14 @@ public class CsvReader extends Thread {
     }
 
     public CsvReader() {
+    }
+
+    public void setBirdAttrCount(int birdAttrCount) {
+        this.birdAttrCount = birdAttrCount;
+    }
+
+    public void setMammalAttrCount(int mammalAttrCount) {
+        this.mammalAttrCount = mammalAttrCount;
     }
 
     public CsvReader(String filename) {

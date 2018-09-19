@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane prefHeight="502.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donntu.kp.client.ui.controller.Controller">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="556.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.donntu.kp.client.ui.controller.Controller">
    <children>
       <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="214.0" />
       <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="739.0" text="Добавить">
@@ -15,11 +12,32 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="sendButton" layoutX="14.0" layoutY="444.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="739.0" text="Отправить">
+      <Button fx:id="sendButton" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" prefHeight="38.0"
+              prefWidth="739.0" text="Отправить">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="507.0" />
+      <TextField fx:id="hostTB" layoutX="78.0" layoutY="446.0" prefHeight="39.0" prefWidth="282.0">
+         <font>
+            <Font size="18.0"/>
+         </font>
+      </TextField>
+      <TextField fx:id="portTB" layoutX="536.0" layoutY="446.0" prefHeight="39.0" prefWidth="214.0">
+         <font>
+            <Font size="18.0"/>
+         </font>
+      </TextField>
+      <Label layoutX="14.0" layoutY="450.0" text="Хост">
+         <font>
+            <Font size="22.0"/>
+         </font>
+      </Label>
+      <Label layoutX="471.0" layoutY="450.0" text="Порт">
+         <font>
+            <Font size="22.0"/>
+         </font>
+      </Label>
    </children>
 </AnchorPane>

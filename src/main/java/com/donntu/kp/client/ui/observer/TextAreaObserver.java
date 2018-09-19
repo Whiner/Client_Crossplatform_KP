@@ -11,7 +11,7 @@ public class TextAreaObserver implements IObserver {
     }
 
     @Override
-    public void update(String log) {
-        textField.setText(textField.getText().concat("\n" + log));
+    public synchronized void update(String log) {
+        textField.appendText(log + "\n");
     }
 }

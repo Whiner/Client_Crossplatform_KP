@@ -33,7 +33,7 @@ public class Log {
         return instance;
     }
 
-    public void log(String log) {
+    public synchronized void log(String log) {
         notifyObservers(log);
         logBuffer.addLog(new Date().toString() + " " + Thread.currentThread().getName() + " " + log + System.lineSeparator());
 
