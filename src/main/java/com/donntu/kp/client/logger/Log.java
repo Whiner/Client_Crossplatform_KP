@@ -1,6 +1,6 @@
 package com.donntu.kp.client.logger;
 
-import com.donntu.kp.client.ui.observer.IObserver;
+import com.donntu.kp.client.logger.observer.IObserver;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,7 +36,6 @@ public class Log {
     public synchronized void log(String log) {
         notifyObservers(log);
         logBuffer.addLog(new Date().toString() + " " + Thread.currentThread().getName() + " " + log + System.lineSeparator());
-
     }
 
 }

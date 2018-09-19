@@ -23,9 +23,24 @@ public class Model {
         return filenames;
     }
 
+    private int checkUniqueCount(List<File> files) {
+        int count = 0;
+        for (File file : files) {
+            if (!this.files.contains(file)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public void pickFiles() {
         List<File> files = FilePicker.getFiles();
-        Log.getInstance().log("Выбраны " + files.size() + " файлов");
+        int i = checkUniqueCount(files);
+        if (i == 0) {
+            Log.getInstance().log("Все выбранные файлы уже находятся в очереди");
+        } else {
+            Log.getInstance().log("Выбрано " + i + " файлов");
+        }
         this.files.addAll(files);
     }
 

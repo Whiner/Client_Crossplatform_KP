@@ -1,43 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="556.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.donntu.kp.client.ui.controller.Controller">
    <children>
-      <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="214.0" />
-      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="739.0" text="Добавить">
+      <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="244.0"
+                AnchorPane.leftAnchor="14.0"/>
+      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0"
+              prefWidth="739.0" text="Добавить" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <Button fx:id="sendButton" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" prefHeight="38.0"
-              prefWidth="739.0" text="Отправить">
+              prefWidth="739.0" text="Отправить" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="507.0" />
-      <TextField fx:id="hostTB" layoutX="78.0" layoutY="446.0" prefHeight="39.0" prefWidth="282.0">
+      <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="481.0"
+                AnchorPane.rightAnchor="16.0"/>
+      <TextField fx:id="hostTB" layoutX="14.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Хост"
+                 AnchorPane.leftAnchor="14.0">
          <font>
             <Font size="18.0"/>
          </font>
       </TextField>
-      <TextField fx:id="portTB" layoutX="536.0" layoutY="446.0" prefHeight="39.0" prefWidth="214.0">
+      <TextField fx:id="portTB" layoutX="400.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Порт"
+                 AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="18.0"/>
          </font>
       </TextField>
-      <Label layoutX="14.0" layoutY="450.0" text="Хост">
-         <font>
-            <Font size="22.0"/>
-         </font>
-      </Label>
-      <Label layoutX="471.0" layoutY="450.0" text="Порт">
-         <font>
-            <Font size="22.0"/>
-         </font>
-      </Label>
    </children>
 </AnchorPane>

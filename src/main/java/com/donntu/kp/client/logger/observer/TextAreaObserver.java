@@ -1,4 +1,4 @@
-package com.donntu.kp.client.ui.observer;
+package com.donntu.kp.client.logger.observer;
 
 import javafx.scene.control.TextArea;
 

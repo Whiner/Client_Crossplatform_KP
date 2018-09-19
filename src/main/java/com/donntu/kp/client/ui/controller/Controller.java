@@ -1,7 +1,7 @@
 package com.donntu.kp.client.ui.controller;
 
 import com.donntu.kp.client.logger.Log;
-import com.donntu.kp.client.ui.observer.TextAreaObserver;
+import com.donntu.kp.client.logger.observer.TextAreaObserver;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;

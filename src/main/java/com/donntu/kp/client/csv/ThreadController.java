@@ -30,7 +30,6 @@ public class ThreadController {
 
         for (Thread thread : threads) {
             thread.start();
-            Log.getInstance().log("Поток " + thread.getName() + " начал свою работу");
         }
 
         for (Thread thread : threads) {
@@ -40,7 +39,7 @@ public class ThreadController {
         for (Thread thread : threads) {
             if (thread instanceof CsvReader) {
                 CsvReader csvReader = (CsvReader) thread;
-                parsedLines.addAll(csvReader.getParsedLines());
+                parsedLines.addAll(csvReader.getReadLines());
             }
         }
     }
