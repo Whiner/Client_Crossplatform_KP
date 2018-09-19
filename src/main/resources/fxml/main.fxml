@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="502.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donntu.kp.client.ui.controller.Controller">
+   <children>
+      <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="214.0" />
+      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="739.0" text="Добавить">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="sendButton" layoutX="14.0" layoutY="444.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="739.0" text="Отправить">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="507.0" />
+   </children>
+</AnchorPane>
