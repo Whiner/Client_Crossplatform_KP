@@ -28,6 +28,7 @@ public class CsvReader extends Thread {
             Log.getInstance().log("Ошибка чтения из файла (" + filename + "). Текст ошибки:" + e.getMessage());
             e.printStackTrace();
         }
+        Log.getInstance().log("Файл (" + filename + ") считан");
         Log.getInstance().log("Файл (" + filename + ") закрыт");
     }
 

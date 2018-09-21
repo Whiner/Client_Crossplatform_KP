@@ -4,6 +4,7 @@ import com.donntu.kp.client.DatagramSender;
 import com.donntu.kp.client.FilePicker;
 import com.donntu.kp.client.csv.ThreadController;
 import com.donntu.kp.client.logger.Log;
+import javafx.scene.control.ListView;
 
 import java.io.File;
 import java.util.HashSet;
@@ -61,5 +62,18 @@ public class Model {
 
         threadController.startReading();
         return threadController.getParsedLines();
+    }
+
+    public void deleteFile(String filename) {
+        for (File file : files) {
+            if (file.getName().equals(filename)) {
+                files.remove(file);
+            }
+        }
+    }
+
+    public void updateFileList(ListView<String> fileQueueLV) {
+        fileQueueLV.getItems().clear();
+        fileQueueLV.getItems().addAll(getFilenames());
     }
 }

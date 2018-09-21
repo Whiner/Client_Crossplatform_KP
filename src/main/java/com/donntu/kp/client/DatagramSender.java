@@ -28,7 +28,7 @@ public class DatagramSender {
                 Log.getInstance().log("Ошибка соединения с сервером. " + e.getMessage());
             }
             ds.send(pack);
-            Log.getInstance().log("Пакет отправлен по адресу " + address.toString());
+            Log.getInstance().log("Пакет (" + message + ") отправлен по адресу " + address.toString());
             ds.close();
         } catch (IOException e) {
             Log.getInstance().log("Ошибка отправки пакета по адресу " + host + "/" + port);

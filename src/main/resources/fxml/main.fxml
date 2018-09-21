@@ -2,37 +2,43 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.*?>
 <AnchorPane prefHeight="556.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.donntu.kp.client.ui.controller.Controller">
    <children>
-      <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="244.0"
-                AnchorPane.leftAnchor="14.0"/>
-      <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0"
-              prefWidth="739.0" text="Добавить" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+       <ListView fx:id="fileQueueLV" layoutX="14.0" layoutY="64.0" prefHeight="366.0" prefWidth="244.0"
+                 AnchorPane.leftAnchor="14.0"/>
+       <Button fx:id="addButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0"
+               prefWidth="350.0" text="Добавить" AnchorPane.leftAnchor="14.0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="sendButton" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" prefHeight="38.0"
-              prefWidth="739.0" text="Отправить" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+       <Button fx:id="sendButton" layoutX="14.0" layoutY="498.0" mnemonicParsing="false" prefHeight="38.0"
+               prefWidth="739.0" text="Отправить" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="481.0"
-                AnchorPane.rightAnchor="16.0"/>
-      <TextField fx:id="hostTB" layoutX="14.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Хост"
-                 AnchorPane.leftAnchor="14.0">
+       <TextArea fx:id="logTF" editable="false" layoutX="243.0" layoutY="64.0" prefHeight="366.0" prefWidth="481.0"
+                 AnchorPane.rightAnchor="14.0"/>
+       <TextField fx:id="hostTB" layoutX="14.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Хост"
+                  AnchorPane.leftAnchor="14.0">
          <font>
-            <Font size="18.0"/>
+             <Font size="18.0"/>
          </font>
       </TextField>
-      <TextField fx:id="portTB" layoutX="400.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Порт"
-                 AnchorPane.rightAnchor="16.0">
+       <TextField fx:id="portTB" layoutX="400.0" layoutY="446.0" prefHeight="39.0" prefWidth="350.0" promptText="Порт"
+                  AnchorPane.rightAnchor="14.0">
          <font>
-            <Font size="18.0"/>
+             <Font size="18.0"/>
          </font>
       </TextField>
+       <Button fx:id="delButton" disable="true" layoutX="400.0" layoutY="14.0" mnemonicParsing="false" prefHeight="39.0"
+               prefWidth="350.0" text="Удалить" AnchorPane.rightAnchor="14.0">
+           <font>
+               <Font size="18.0"/>
+           </font>
+       </Button>
    </children>
 </AnchorPane>

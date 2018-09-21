@@ -20,6 +20,9 @@ public class Controller {
     private Button addButton;
 
     @FXML
+    private Button delButton;
+
+    @FXML
     private TextField hostTB;
 
     @FXML
@@ -31,23 +34,45 @@ public class Controller {
     private void setButtonActions() {
         addButton.setOnAction(event -> {
             model.pickFiles();
-            fileQueueLV.getItems().clear();
-            fileQueueLV.getItems().addAll(model.getFilenames());
+            model.updateFileList(fileQueueLV);
         });
 
         sendButton.setOnAction(event -> {
-            try {
-                model.sendFiles(hostTB.getText(), Integer.parseInt(portTB.getText()));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            if (fileQueueLV.getItems().size() == 0) {
+                Log.getInstance().log("Файлы не выбраны. Отправка не состоялась");
+            } else {
+                try {
+                    model.sendFiles(hostTB.getText(), Integer.parseInt(portTB.getText()));
+                } catch (InterruptedException e) {
+                    Log.getInstance().log("Ошибка отправки: " + e.getMessage());
+                }
             }
         });
+
+        delButton.setOnAction(event -> {
+            String selectedItem = fileQueueLV.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                model.deleteFile(selectedItem);
+                model.updateFileList(fileQueueLV);
+            }
+        });
+
     }
 
     @FXML
     void initialize() {
         setButtonActions();
         Log.getInstance().subscribe(new TextAreaObserver(logTF));
+        fileQueueLV.setStyle("-fx-font-size: 16px");
+        fileQueueLV.setOnMouseClicked(event -> {
+            String selectedItem = fileQueueLV.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                delButton.setDisable(false);
+            } else {
+                delButton.setDisable(true);
+            }
+        });
+
         hostTB.setText("localhost");
         portTB.setText("1050");
     }
